@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="64sp"
+        android:textSize="72sp"
         android:textAlignment="textEnd"
         android:paddingRight="24dp"
         android:paddingBottom="8dp"
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="0"
+        android:text=""
         android:textSize="42sp"
         android:textAlignment="textEnd"
         android:paddingRight="24dp"
@@ -144,7 +144,7 @@
             </com.google.android.material.button.MaterialButton>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttons_c9"
+                android:id="@+id/buttons_9"
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:layout_width="74dp"
                 android:layout_height="80dp"
@@ -323,7 +323,7 @@
             </com.google.android.material.button.MaterialButton>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttons_closedBracket"
+                android:id="@+id/buttons_zero"
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:layout_width="72dp"
                 android:layout_height="78dp"
