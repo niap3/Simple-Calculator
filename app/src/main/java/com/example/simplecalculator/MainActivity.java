@@ -59,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String buttonText = button.getText().toString();
         String dataToCalculate = solutionTV.getText().toString();
         double result;
+        String errorTextOperator = "Invalid Operation";
+        String operatorStringWithDot = "÷×−+.";
+        String operatorStringWithOpenBracket = "÷×−+.(";
 
         if (buttonText.equals("AC")) {
             solutionTV.setText("");
@@ -67,8 +70,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         else if (buttonText.equals("C")) {
-            dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
-            solutionTV.setText(dataToCalculate);
+            if (!dataToCalculate.equals("")) {
+                // pass
+                dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+                solutionTV.setText(dataToCalculate);
+            }
             return;
         }
 
@@ -77,25 +83,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dataToCalculate = dataToCalculate + buttonText;
                 solutionTV.setText(dataToCalculate);
             }
+            else {
+                // if penultimate exists
+                if (dataToCalculate.length() != 0) {
+                    // check penultimate
+                    if (operatorStringWithOpenBracket.indexOf(dataToCalculate.toCharArray()[dataToCalculate.length() - 1]) != -1) {
+                        resultTV.setText(errorTextOperator);
+                    }
+                    else {
+                        result = evaluate(dataToCalculate);
+                        resultTV.setText(Double.toString(result));
+                    }
+                }
+                // if penultimate doesn't exist
+                else {
+                    return;
+                }
+            }
         }
 
-        if (buttonText.equals("=")) {
-            result = evaluate(dataToCalculate);
-            resultTV.setText(Double.toString(result));
-            // add exception cases
-
-            return;
+        if (buttonText.equals("+") || buttonText.equals("÷") || buttonText.equals("×") || buttonText.equals(".") || buttonText.equals("-")) {
+            if (dataToCalculate.length() >= 2) {
+                if (operatorStringWithDot.indexOf(dataToCalculate.toCharArray()[dataToCalculate.length() - 2]) != -1) {
+                    dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+                    solutionTV.setText(dataToCalculate);
+                }
+            }
         }
+
+        if (buttonText.equals(")")) {
+            if (dataToCalculate.indexOf("(") == dataToCalculate.length() - 2) {
+                dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+                solutionTV.setText(dataToCalculate);
+            }
+        }
+
+        // negative numbers
+        if (buttonText.equals("-")) {
+            //add "+0" string before - symbol
+        }
+
     }
-
-    /* public boolean isNumber(String str) {
-        try {
-            Double.parseDouble(str); // Try to parse the string as a double
-            return true; // Parsing succeeded, so it's a valid number
-        } catch (NumberFormatException e) {
-            return false; // Parsing failed, so it's not a valid number
-        }
-    } */
 
     public static double evaluate(String expression) {
         // Remove spaces from the expression
@@ -116,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i--; // Move back one step to process the next character correctly
                 double number = Double.parseDouble(numBuilder.toString());
                 numbers.push(number);
-            } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+            } else if (ch == '+' || ch == '−' || ch == '×' || ch == '÷') {
                 // Operator encountered
                 while (!operators.isEmpty() && hasPrecedence(ch, operators.peek())) {
                     double operand2 = numbers.pop();
@@ -141,21 +169,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private static boolean hasPrecedence(char op1, char op2) {
-        return (op2 == '*' || op2 == '/') && (op1 == '+' || op1 == '-');
+        return (op2 == '×' || op2 == '÷') && (op1 == '+' || op1 == '−');
     }
 
     private static double applyOperator(char operator, double operand1, double operand2) {
         switch (operator) {
             case '+':
                 return operand1 + operand2;
-            case '-':
+            case '−':
                 return operand1 - operand2;
-            case '*':
+            case '×':
                 return operand1 * operand2;
-            case '/':
-                if (operand2 == 0) {
-                    throw new ArithmeticException("Division by zero is not allowed.");
-                }
+            case '÷':
                 return operand1 / operand2;
             default:
                 throw new IllegalArgumentException("Invalid operator: " + operator);

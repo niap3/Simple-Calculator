@@ -16,7 +16,8 @@
         android:paddingBottom="8dp"
         android:textColor="@color/black"
         android:layout_above="@+id/button_layout"
-        android:id="@+id/result_tv">
+        android:id="@+id/result_tv"
+        android:fontFamily="sans-serif-medium">
     </TextView>
 
     <TextView
@@ -29,7 +30,8 @@
         android:paddingTop="8dp"
         android:textColor="@color/black"
         android:layout_above="@+id/result_tv"
-        android:id="@+id/query_tv">
+        android:id="@+id/query_tv"
+        android:fontFamily="sans-serif-bold">
     </TextView>
 
     <LinearLayout
@@ -56,11 +58,10 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#9F83E8"
                 android:fontFamily="sans-serif"
-                android:text="C"
+                android:text="@string/C_string"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:cornerRadius="50dp">
-                >
 
             </com.google.android.material.button.MaterialButton>
 
@@ -72,7 +73,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#9F83E8"
                 android:fontFamily="sans-serif"
-                android:text="("
+                android:text="@string/openBracket_string"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -86,7 +87,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="12dp"
                 android:backgroundTint="#9F83E8"
-                android:text=")"
+                android:text="@string/closeBracket_string"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -101,7 +102,7 @@
                 android:layout_margin="8dp"
                 android:backgroundTint="#301F5C"
                 android:fontFamily="sans-serif"
-                android:text="/"
+                android:text="@string/divide_string"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -122,7 +123,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="7"
+                android:text="@string/string_7"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -136,7 +137,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="8"
+                android:text="@string/string_8"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -150,7 +151,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="9"
+                android:text="@string/string_9"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -165,7 +166,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#301F5C"
                 android:fontFamily="sans-serif"
-                android:text="*"
+                android:text="@string/multiply_string"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -186,7 +187,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="4"
+                android:text="@string/string_4"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -200,7 +201,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="5"
+                android:text="@string/string_5"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -214,7 +215,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="6"
+                android:text="@string/string_6"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -229,7 +230,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#301F5C"
                 android:fontFamily="sans-serif"
-                android:text="-"
+                android:text="@string/minus_string"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -250,7 +251,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="1"
+                android:text="@string/string_1"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -264,7 +265,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="2"
+                android:text="@string/string_2"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -278,7 +279,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="3"
+                android:text="@string/string_3"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -293,7 +294,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#301F5C"
                 android:fontFamily="sans-serif"
-                android:text="+"
+                android:text="@string/plus_string"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -315,7 +316,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#9F83E8"
                 android:fontFamily="sans-serif"
-                android:text="AC"
+                android:text="@string/AC_string"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:cornerRadius="50dp">
@@ -329,7 +330,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="0"
+                android:text="@string/string_0"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -343,7 +344,7 @@
                 android:layout_height="78dp"
                 android:layout_margin="12dp"
                 android:fontFamily="sans-serif"
-                android:text="."
+                android:text="@string/dot_string"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
@@ -358,7 +359,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#301F5C"
                 android:fontFamily="sans-serif"
-                android:text="="
+                android:text="@string/equals_string"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="50dp">
